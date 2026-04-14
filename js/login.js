@@ -44,6 +44,6 @@ document.getElementById("loginForm").addEventListener("submit", async function (
 
     } catch (error) {
         console.error(error);
-        alert("Server error");
+        // alert("Server error");
     }
 });

@@ -20,11 +20,9 @@ document.getElementById("loginForm").addEventListener("submit", async function (
 
 
         if (!response.ok || data.success === false) {
-            alert(data.message || "Login successful ✅ ");
+            alert(data.message || "Login failed");
             return;
         }
-
-
 
 
         // ✅ Save token & role
@@ -36,14 +34,16 @@ document.getElementById("loginForm").addEventListener("submit", async function (
         // ✅ ROLE-BASED REDIRECT
         if (data.role === "developer") {
             window.location.href = "developer-dashboard.html";
+            return;
         } else if (data.role === "buyer") {
             window.location.href = "buyer-dashboard.html";
+            return;
         } else {
             alert("Unknown role");
         }
 
     } catch (error) {
-        console.error(error);
-        // alert("Server error");
+        console.error("REAL ERROR:", error);
+        // alert("Server error"); ❌ remove for now
     }
 });

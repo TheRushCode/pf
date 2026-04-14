@@ -20,7 +20,7 @@ document.getElementById("loginForm").addEventListener("submit", async function (
 
 
         if (!response.ok || data.success === false) {
-            alert(data.message || "Login failed");
+            alert(data.message || "Login successful ✅");
             return;
         }
 

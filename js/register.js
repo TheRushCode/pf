@@ -8,7 +8,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
         role: document.getElementById("role").value
     };
 
-    const res = await fetch("pb-production-b123.up.railway.app", {
+    const res = await fetch("https://pb-production-b123.up.railway.app/api/auth/register", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

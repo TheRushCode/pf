@@ -15,10 +15,17 @@ document.getElementById("loginForm").addEventListener("submit", async function (
 
         const data = await response.json();
 
-        if (!response.ok) {
+
+
+
+
+        if (!response.ok || data.success === false) {
             alert(data.message || "Login failed");
             return;
         }
+
+
+
 
         // ✅ Save token & role
         localStorage.setItem("token", data.token);

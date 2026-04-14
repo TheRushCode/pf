@@ -25,7 +25,7 @@ async function uploadSnippet() {
   if (btn) { btn.disabled = true; btn.textContent = "Uploading..."; }
 
   try {
-    const res = await fetch(`${API_BASE}/snippet/create`, {
+    const res = await fetch(`${API_BASE}/api/snippet/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -60,7 +60,7 @@ async function loadSnippets() {
   listEl.innerHTML = `<p style="text-align:center;color:var(--text-secondary);padding:40px 0;">Loading snippets...</p>`;
 
   try {
-    const res = await fetch(`${API_BASE}/snippet/list`);
+    const res = await fetch(`${API_BASE}/api/snippet/list`);
 
     if (!res.ok) {
       listEl.innerHTML = `<p style="text-align:center;color:var(--danger);padding:40px 0;">Server error (${res.status}). Try again later.</p>`;
